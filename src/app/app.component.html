@@ -1,0 +1,42 @@
+<div class="block">
+  <h3>Domain Reseller</h3>
+
+  <div class="container">
+    <form [formGroup]="registrationForm">
+      <div class="form-group">
+        <label for="fname">Enter the desired domain name</label>&nbsp;
+        <input
+          formControlName="domainName"
+          class="form-control"
+          type="text"
+          id="dname"
+          name="dname"
+        />
+
+        <button type="button" (click)="onsubmit()" class="btn btn-primary">
+          check availability
+        </button>
+      </div>
+    </form>
+    <!-- <p>
+      {{ registrationForm.value | json }}
+    </p>
+    <p>
+      {{ answer | json }}
+    </p>
+    <div *ngIf="submitted">
+      Required
+    </div> -->
+    <!-- <div class="wbox" *ngIf="avail">
+      congratulations! The desired domain name is available.
+    </div> -->
+    <div *ngIf="submitted">
+      <div class="alert alert-success" role="alert" *ngIf="avail">
+        congratulations! The desired domain name is available.
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf="!avail">
+        Sorry! try something else.
+      </div>
+    </div>
+  </div>
+</div>
